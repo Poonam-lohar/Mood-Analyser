@@ -4,29 +4,25 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class MoodAnalyserTest {
-
     @Test
-    public void givenMessageWhenProperShouldReturnSad() throws MoodAnalyserException {
-        MoodAnalyser moodAnalyser = new MoodAnalyser("This is a sad message");
-        String sadMood = moodAnalyser.analyserMood();
+
+    public void givenMessage_WhenProper_ShouldReturnSad() {
+
+        MoodAnalyser moodAnalyser = new MoodAnalyser("I am in sad mood");
+        String sadMood = moodAnalyser.analyseMood();
         System.out.println(sadMood);
         Assertions.assertEquals("SAD", sadMood);
     }
 
     @Test
-    public void givenMessageWhenProperShouldReturnHappy() throws MoodAnalyserException {
-        MoodAnalyser moodAnalyser = new MoodAnalyser("I am in a happy mood");
-        String happyMood = moodAnalyser.analyserMood();
+
+    public void givenMessage_WhenProper_ShouldReturnHappy() {
+        MoodAnalyser moodAnalyser = new MoodAnalyser("I am in happy mood");
+        String happyMood = moodAnalyser.analyseMood();
         System.out.println(happyMood);
         Assertions.assertEquals("HAPPY", happyMood);
+
     }
 
-    @Test
-    public void givenMessageWhenProperShouldReturnNull() throws MoodAnalyserException {
-        MoodAnalyser moodAnalyser = new MoodAnalyser(null);
-        String nullMood = moodAnalyser.analyserMood();
-        System.out.println(nullMood);
-        Assertions.assertEquals("Happy", nullMood);
-    }
+
 }
-
